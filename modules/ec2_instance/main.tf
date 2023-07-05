@@ -5,7 +5,7 @@ locals {
     }, var.extra_tags)
 }
 
-resource "aws_instance" "sampleinstance" {
+resource "aws_instance" "ec2node" {
   count         = var.ec2_count
   ami           = var.aws_image
   instance_type = var.aws_instance_type
@@ -13,7 +13,7 @@ resource "aws_instance" "sampleinstance" {
   root_block_device {
     delete_on_termination = true
     encrypted             = true
-    volume_size           = 10
+    volume_size           = 8
     volume_type           = "gp2"
   }
   key_name                    = var.ec2_keypair
