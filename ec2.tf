@@ -8,8 +8,9 @@ module "ec2_east" {
   securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
   user_data         = file("east_user_data.sh")
   extra_tags = {
-    Name        = "server-awsami"
+    Name        = "c8.local"
     Environment = "Devlopment"
+    group       =  "frontend"
   }
 }
 
@@ -23,7 +24,8 @@ module "ec2_west1" {
   securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
   user_data         = file("west_user_data.sh")
   extra_tags = {
-    Name        = "Server1-ubuntu",
+    Name        = "u21.local",
     Environment = "Developmemt"
+    group       = "backend"
   }
 }
