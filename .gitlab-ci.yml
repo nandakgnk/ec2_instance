@@ -49,9 +49,7 @@ apply:
   dependencies:
     - build
   when: manual
-  only:
-    - main
-
+  
 destroy:
   stage: destroy
   script:
@@ -60,6 +58,4 @@ destroy:
   dependencies:
     - apply  
   when: manual
-  only:
-    refs:
-      - main
+  
