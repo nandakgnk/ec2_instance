@@ -4,7 +4,7 @@ module "ec2_east" {
   aws_image         = var.east_aws_image
   aws_instance_type = var.east_aws_instance_type
   ec2_keypair       = var.east_keypair
-  subnetid          = ${element(subnet_ids, count.index)}   ]
+  subnetid          = ${element(subnet_ids, count.index)}
   securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
   user_data         = file("east_user_data.sh")
   extra_tags = {
