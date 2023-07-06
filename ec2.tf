@@ -20,7 +20,7 @@ module "ec2_west1" {
   aws_image         = var.west_aws_image
   aws_instance_type = var.west_aws_instance_type
   ec2_keypair       = var.west_keypair
-  subnetid          = tolist(data.aws_subnet_ids.west_subnetid.ids)[count.index % length(data.aws_subnet_ids.west_subnetid.ids)]
+  subnetid          = tolist(data.aws_subnet_ids.east_subnetid.ids)[count.index % length(data.aws_subnet_ids.east_subnetid.ids)]
  # subnetid          = data.aws_subnet.east_subnetid.id
 #  subnetid          = tolist(data.aws_subnet.east_subnetid.ids)[count.index %
 #length(data.aws_subnet_ids.east_subnetid.ids)   ] 
