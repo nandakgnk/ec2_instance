@@ -4,10 +4,10 @@ data "aws_subnet" "east_subnetid" {
     values = ["${var.east_vpc_id}"]
   }
 
-  filter {
-    name   = "tag:Name"
-    values = ["*-dev-*"]
-  }
+#  filter {
+#    name   = "tag:Name"
+#    values = ["*-dev-*"]
+#  }
 }
 
 data "aws_security_group" "east_sgroupid" {
