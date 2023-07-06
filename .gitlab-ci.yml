@@ -1,28 +1,32 @@
-include:
- - template: Terraform/Base.gitlab-ci.yml  
- - template: Jobs/SAST-IaC.gitlab-ci.yml   
+image:
+  name: hashicorp/terraform:light
+
+  entrypoint:
+    - '/usr/bin/env'
+    - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    - 'AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}' 
+    - 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}' 
+    - 'AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}'
+
+variables:
+  PLAN: plan.tfplan
+
+cache:
+  paths:
+    - .terraform      
+
+before_script:
+  - terraform --version
+  - terraform init
 
 stages:
- - validate
- - test
- - build
- - deploy
- - cleanup
-
-fmt:
- extends: .terraform:fmt
- needs: []
+  - validate
+  - plan
+  - apply
+  - destroy
 
 validate:
- extends: .terraform:validate
- needs: []
-
-build:
- extends: .terraform:build
-
-deploy:
- extends: .terraform:deploy
- dependencies:
-   - build
- environment:
-   name: $TF_STATE_NAME
+  stage: validate
+  script:
+    - terraform validate
+  
