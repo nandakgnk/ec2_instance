@@ -48,22 +48,22 @@ plan:
     paths:
       - $PLAN
   
-build:
-  stage: plan
-  script:
-    - terraform plan -out=$PLAN
-  artifacts:
-    name: plan
-    paths:
-      - $PLAN
+#build:
+#  stage: plan
+#  script:
+#    - terraform plan -out=$PLAN
+#  artifacts:
+#    name: plan
+#    paths:
+#      - $PLAN
   
 
 apply:
   stage: apply
   script:
     - terraform apply -input=false $PLAN
-  dependencies:
-    - build
+ # dependencies:
+ #   - build
   when: manual
   
 destroy:
