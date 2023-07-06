@@ -19,7 +19,7 @@ variable "west_ec2_count" {
 
 variable "east_aws_image" {
   description = "AMI to launch"
-  default     = "ami-04823729c75214919"
+  default     = "ami-026ebd4cfe2c043b2"
 }
 
 variable "west_aws_image" {
