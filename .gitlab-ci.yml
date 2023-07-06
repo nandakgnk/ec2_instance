@@ -42,3 +42,24 @@ plan:
     paths:
       - $PLAN
   
+apply:
+  stage: apply
+  script:
+    - terraform apply -input=false $PLAN
+  dependencies:
+    - build
+  when: manual
+  only:
+    - main
+
+destroy:
+  stage: destroy
+  script:
+    - echo "Destroying resources"
+    - terraform destroy -state=$STATE --auto-approve
+  dependencies:
+    - apply  
+  when: manual
+  only:
+    refs:
+      - main
