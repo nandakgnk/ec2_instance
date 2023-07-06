@@ -29,7 +29,16 @@ validate:
   stage: validate
   script:
     - terraform validate
-  
+
+build:
+  stage: plan
+  script:
+    - terraform plan -out=$PLAN
+  artifacts:
+    name: plan
+    paths:
+      - $PLAN
+      
 plan:
   stage: plan
   script:
