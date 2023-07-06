@@ -6,7 +6,7 @@ data "aws_subnet" "east_subnetid" {
 
   filter {
     name   = "tag:Name"
-    values = ["ford-dev-sub2"]
+    values = ["*-dev-*"]
   }
 }
 
