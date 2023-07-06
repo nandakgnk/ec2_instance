@@ -5,7 +5,7 @@ locals {
     }, var.extra_tags)
 }
 
-resource "aws_instance" "ec2node" {
+resource "aws_instance" "sampleinstance" {
   count         = var.ec2_count
   ami           = var.aws_image
   instance_type = var.aws_instance_type
