@@ -6,7 +6,6 @@ east_aws_instance_type = "t3.micro"
 east_keypair           = "myownuse"
 #subnetid               = data.aws_subnet.east_subnetid.id
 #securitygid            = ["${data.aws_security_group.east_sgroupid.id}"]
-east_subnetid          = 
-east_securitygid       = []
-
+east_subnetid          = "subnet-0463e8468a07a93d7"
+east_securitygid       = ["sg-0395da20bc53391d8"]
 east_ec2_name          = "c8.local"
