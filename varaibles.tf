@@ -34,11 +34,15 @@ variable "east_aws_instance_type" {
 variable "west_aws_instance_type" {
 }
 
-variable "east_ec2_name" {
+variable "east_ec2name" {
   type    = string
 }
 
-variable "west_ec2_name" {
+variable "east_ec2name" {
+  type    = string
+}
+
+variable "west_ec2name" {
   type    = string
 }
 
