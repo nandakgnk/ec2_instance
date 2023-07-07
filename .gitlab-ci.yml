@@ -19,6 +19,8 @@ before_script:
   - terraform --version
   - terraform init
   - terraform fmt
+when:
+  - manual  
 
 stages:
   - validate
@@ -48,7 +50,8 @@ plan:
     name: plan  
     paths:
       - $PLAN
-  
+  when:
+    - manual 
 #build:
 #  stage: plan
 #  script:
@@ -71,7 +74,7 @@ destroy:
   stage: destroy
   script:
     - echo "Destroying resources"
-    - terraform destroy -state=$STATE --auto-approve
+    - terraform destroy -var-file="east_dev_vars.tfvars" -state=$STATE --auto-approve
   dependencies:
     - apply  
   when: manual
