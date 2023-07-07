@@ -42,7 +42,7 @@ variable "east_ec2name" {
   type    = string
 }
 
-variable "east_ec2name" {
+variable "west_ec2name" {
   type    = string
 }
 
@@ -60,7 +60,7 @@ variable "east_sgroupid" {
   type = list
 } 
 
-variable "east_sgroupid" {
+variable "west_sgroupid" {
   type = list
 } 
 
