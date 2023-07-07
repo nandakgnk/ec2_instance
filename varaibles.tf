@@ -51,11 +51,11 @@ variable "east_subnetid" {
 variable "west_subnetid" {
 }
  
-variable "east_sgroupid" {
+variable "east_securitygid" {
   type = list
 } 
 
-variable "west_sgroupid" {
+variable "west_securitygid" {
   type = list
 } 
 
