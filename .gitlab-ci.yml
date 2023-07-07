@@ -35,7 +35,7 @@ validate:
 plan:
   stage: plan
   script:
-    - terraform plan -var-file=east_dev_vars.tfvars  -out=$PLAN
+    - terraform plan -var-file="east_dev_vars.tfvars" -out=$PLAN
     - echo \`\`\`diff > plan.txt
     - terraform show -no-color ${PLAN} | tee -a plan.txt
     - echo \`\`\` >> plan.txt
@@ -62,7 +62,7 @@ plan:
 apply:
   stage: apply
   script:
-    - terraform apply -var-file=east_dev_vars.tfvars -input=false $PLAN
+    - terraform apply -var-file="east_dev_vars.tfvars" -input=false $PLAN
  # dependencies:
  #   - build
   when: manual
