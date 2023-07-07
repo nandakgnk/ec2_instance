@@ -57,9 +57,11 @@ variable "west_subnetid" {
 }
  
 variable "east_sgroupid" {
+  type = list
 } 
 
 variable "east_sgroupid" {
+  type = list
 } 
 
 variable "extra_tags" {
