@@ -13,7 +13,7 @@ resource "aws_instance" "sampleinstance" {
   root_block_device {
     delete_on_termination = true
     encrypted             = true
-    volume_size           = 8
+    volume_size           = 12
     volume_type           = "gp2"
   }
   key_name                    = var.ec2_keypair
