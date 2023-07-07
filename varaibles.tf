@@ -1,3 +1,9 @@
+variable "aws_region" {
+   default = "us-east-1"
+}
+
+
+
 variable "east_vpc_id" {
 }
 
@@ -46,7 +52,21 @@ variable "west_ec2name" {
   type    = string
 }
 
+variable "east_subnetid" {
+} 
+
+variable "west_subnetid" {
+}
+ 
+variable "east_sgroupid" {
+} 
+
+variable "east_sgroupid" {
+} 
+
 variable "extra_tags" {
   type    = map(any)
   default = {}
 }
+
+
