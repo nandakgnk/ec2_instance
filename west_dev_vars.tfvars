@@ -1,9 +1,9 @@
-##EAST TFVARS
-east_vpc_id            = "vpc-0681449313c00eadd"
-ec2_count              = "1"
-east_aws_image         = "ami-026ebd4cfe2c043b2"
-east_aws_instance_type = "t3.micro"
-east_keypair           = "myownuse"
-subnetid               = data.aws_subnet.east_subnetid.id
-securitygid            = ["${data.aws_security_group.east_sgroupid.id}"]
-east_ec2_name          = "c8.local"
+##WEST TFVARS
+west_vpc_id            = "vpc-0317c37c745c9a04f"
+west_ec2count          = "1"
+west_aws_image         = "ami-053b0d53c279acc90"
+west_aws_instance_type = "t3.micr0"
+west_keypair           = "myownuse"
+west_subnetid          = data.aws_subnet.east_subnetid.id
+west_securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
+west_ec2_name          = "u21.local"
