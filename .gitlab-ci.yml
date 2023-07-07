@@ -62,7 +62,7 @@ plan:
 apply:
   stage: apply
   script:
-    - terraform apply -var-file="east_dev_vars.tfvars" -input=false $PLAN
+    - terraform apply -input=false $PLAN
  # dependencies:
  #   - build
   when: manual
