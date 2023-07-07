@@ -9,11 +9,11 @@ variable "west_vpc_id" {
 }
 
 
-variable "east_ec2_count" {
+variable "east_ec2count" {
   description = "Number of instances to launch"
 }
 
-variable "west_ec2_count" {
+variable "west_ec2count" {
   description = "Number of instances to launch"
 }
 
