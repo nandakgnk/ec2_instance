@@ -19,8 +19,6 @@ before_script:
   - terraform --version
   - terraform init
   - terraform fmt
-when:
-  - manual  
 
 stages:
   - validate
@@ -50,8 +48,7 @@ plan:
     name: plan  
     paths:
       - $PLAN
-  when:
-    - manual 
+  
 #build:
 #  stage: plan
 #  script:
