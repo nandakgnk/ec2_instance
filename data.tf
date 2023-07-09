@@ -4,9 +4,9 @@ data "aws_subnet" "east_subnetid" {
     values = ["${var.east_vpc_id}"]
   }
 
-  filter {
-    name   = "tag:Name"
-    values = ["ford-dev-sub2"]
+#  filter {
+#    name   = "tag:Name"
+#    values = ["ford-dev-sub2"]
   }
 }
 
