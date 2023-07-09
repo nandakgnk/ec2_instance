@@ -1,4 +1,4 @@
-resource "random_integer" 'random_count' {
+resource "random_integer" "random_count" {
   max = length(data.aws_subnet.east_subnet.id)-1
   min = 0
   
