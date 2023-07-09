@@ -1,5 +1,5 @@
 resource "random_integer" "random_count" {
-  max = length(data.aws_subnet.east_subnetid.id)-1  
+  max = length(data.aws_subnet.east_subnetid.id) - 1  
   min = 0
   
   keepers = {
@@ -19,7 +19,7 @@ module "ec2_east" {
   securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
   user_data         = file("east_user_data.sh")
   extra_tags = {
-    Name        =  var.east_ec2name
+    Name        =  var.east_ec2name[count.index]
     Environment = "Devlopment"
     group       =  "frontend"
   }
@@ -39,7 +39,7 @@ module "ec2_west" {
   #securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
   user_data         = file("west_user_data.sh")
   extra_tags = {
-    Name        = var.west_ec2name
+    Name        = var.west_ec2name[count.index]
     Environment = "Developmemt"
     group       = "backend"
   }
