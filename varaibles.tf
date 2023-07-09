@@ -32,6 +32,12 @@ variable "east_keypair" {
 variable "west_keypair" {
 }
 
+variable "east_subnetid" {
+}
+
+variable "west_subnetid" {
+}
+
 variable "east_aws_instance_type" {
 }
 
