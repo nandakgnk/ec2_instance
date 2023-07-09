@@ -6,7 +6,7 @@ module "ec2_east" {
   ec2_keypair       = var.east_keypair
   #subnetid          = data.aws_subnet.east_subnetid.id
   #securitygid       = var.east_securitygid
-  subnetid          =  var.east_subnetid
+  subnetid          = data.aws_subnet.east_subnetid.id[random_integer.random_count.result]
   securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
   user_data         = file("east_user_data.sh")
   extra_tags = {
@@ -22,8 +22,8 @@ module "ec2_west" {
   aws_image         = var.west_aws_image
   aws_instance_type = var.west_aws_instance_type
   ec2_keypair       = var.west_keypair
-  subnetid          = var.west_subnetid
-  securitygid       = var.west_securitygid
+  subnetid          = data.aws_subnet.east_subnetid.id[random_integer.random_count.result]
+  securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
   #subnetid          = data.aws_subnet.east_subnetid.id 
   #securitygid       = ["${data.aws_security_group.east_sgroupid.id}"]
   user_data         = file("west_user_data.sh")
