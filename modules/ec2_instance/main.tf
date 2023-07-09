@@ -10,7 +10,7 @@ resource "random_integer" "random_count" {
   min = 0
   
   keepers = {
-     test_name  = "ec2-instance"
+     test_name  = var.ec2_name
   }
 }
 
