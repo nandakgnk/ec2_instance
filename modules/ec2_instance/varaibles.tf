@@ -29,7 +29,6 @@ variable "subnetid" {
 
 variable "ec2_name" {
   description = "fetch subnet details"
-  default = "sampleinstance"
 }
 
 variable "user_data" {
