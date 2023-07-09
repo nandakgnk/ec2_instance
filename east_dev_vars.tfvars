@@ -9,9 +9,6 @@ subnetid              =    data.aws_subnet.east_subnetid.id[random_integer.rando
 #east_subnetid          =   "subnet-0463e8468a07a93d7"
 east_securitygid       =   ["sg-0395da20bc53391d8"]
 east_ec2name           =   "c8.local"
-east_bname             =   "myownuse-terraform-state-backend"
-east_key               =   "terraform/statefile"
-east_dyn_db            =   "terraform_state"
 
 ##WEST TFVARS
 west_vpc_id            =   "vpc-0681449313c00eadd"
@@ -24,6 +21,3 @@ west_subnetid         =    data.aws_subnet.east_subnetid.id[random_integer.rando
 #west_subnetid          =   "subnet-0463e8468a07a93d7"
 west_securitygid       =   ["sg-0395da20bc53391d8"]
 west_ec2name           =   "u21.local"
-east_bname             =   "myownuse-terraform-state-backend"
-east_key               =   "terraform/statefile"
-east_dyn_db            =   "terraform_state
