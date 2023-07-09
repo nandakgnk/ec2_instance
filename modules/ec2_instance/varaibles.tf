@@ -3,10 +3,10 @@ variable "ec2_count" {
   default     = 1
 }
 
-variable "ec2_name" {
-  description = "Number of instances to launch"
-  default     = "instance1"
-}
+#variable "ec2_name" {
+#  description = "Number of instances to launch"
+#  default     = "instance1"
+#}
 
 variable "aws_image" {
     description = "Enter AWS image name"
