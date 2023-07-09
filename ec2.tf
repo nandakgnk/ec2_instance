@@ -1,3 +1,12 @@
+resource "random_integer" 'random_count' {
+  max = length(data.aws_subnet.east_subnet.id)-1
+  min = 0
+  
+  keepers = {
+     test_name  = var.east_ec2name
+  }
+}
+
 module "ec2_east" {
   source            = "./modules/ec2_instance"
   ec2_count         = var.east_ec2count
