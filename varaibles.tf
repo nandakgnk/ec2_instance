@@ -39,6 +39,12 @@ variable "east_aws_instance_type" {
 variable "west_aws_instance_type" {
 }
 
+variable "west_subnetid" {
+}
+
+variable "west_securitygid" {
+}
+
 variable "east_ec2name" {
 }
 
