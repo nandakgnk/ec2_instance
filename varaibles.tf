@@ -63,17 +63,3 @@ variable "extra_tags" {
   type    = map(any)
   default = {}
 }
-
-variable "east_bname" {
-  type = list
-}
-
-
-variable "east_key" {
-  type = list
-}
-
-
-variable "east_dyn_db" {
-  type = list
-}
