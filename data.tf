@@ -7,7 +7,7 @@ data "aws_subnet" "east_subnetid" {
 #  filter {
 #    name   = "tag:Name"
 #    values = ["ford-dev-sub2"]
-  }
+#  }
 }
 
 data "aws_security_group" "east_sgroupid" {
