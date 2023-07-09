@@ -18,6 +18,6 @@ west_aws_instance_type =   "t3.micro"
 west_keypair           =   "myownuse"
 #west_subnetid         =    data.aws_subnet.east_subnetid.id[random_integer.random_count.result]
 #west_securitygid       =   ["${data.aws_security_group.east_sgroupid.id}"]
-#west_subnetid          =   "subnet-0463e8468a07a93d7"
+west_subnetid          =   "subnet-0463e8468a07a93d7"
 #west_securitygid       =   ["sg-0395da20bc53391d8"]
 west_ec2name           =   "u21.local"
