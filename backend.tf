@@ -7,7 +7,7 @@ terraform {
    bucket         = var.east_bname"myownuse-terraform-state-backend"
    key            = var.east_key" terraform/statefile"
    region         = var.aws_region
-   dynamodb_table = var.dyn_db "terraform_state"
+   dynamodb_table = var.east_dyn_db "terraform_state"
 
   }
 }  
