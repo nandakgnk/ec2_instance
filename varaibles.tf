@@ -1,5 +1,5 @@
 variable "aws_region" {
-   default = "us-east-1"
+  default = "us-east-1"
 }
 
 variable "east_vpc_id" {
@@ -32,17 +32,10 @@ variable "east_keypair" {
 variable "west_keypair" {
 }
 
-
 variable "east_aws_instance_type" {
 }
 
 variable "west_aws_instance_type" {
-}
-
-variable "west_subnetid" {
-}
-
-variable "west_securitygid" {
 }
 
 variable "east_ec2name" {
@@ -51,6 +44,20 @@ variable "east_ec2name" {
 variable "west_ec2name" {
 }
 
+
+variable "east_subnetid" {
+}
+
+variable "west_subnetid" {
+}
+
+variable "east_securitygid" {
+  type = list(any)
+}
+
+variable "west_securitygid" {
+  type = list(any)
+}
 
 variable "extra_tags" {
   type    = map(any)
