@@ -1,5 +1,5 @@
 resource "random_integer" "random_count" {
-  max = length(data.aws_subnet.east_subnet.id)-1
+  max = length(data.aws_subnet.east_subnetid.id)-1  
   min = 0
   
   keepers = {
@@ -27,7 +27,7 @@ module "ec2_east" {
 
 module "ec2_west" {
   source            = "./modules/ec2_instance"
-  ec2_count    = var.west_ec2count
+  ec2_count         = var.west_ec2count
   aws_image         = var.west_aws_image
   aws_instance_type = var.west_aws_instance_type
   ec2_keypair       = var.west_keypair
