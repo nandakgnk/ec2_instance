@@ -1,7 +1,7 @@
 data "aws_subnet" "east_subnetid" {
   filter {
     name   = "vpc-id"
-    values = ["${var.east_vpc_id}"]
+    values = var.east_vpc_id
   }
 
 #  filter {
