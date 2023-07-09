@@ -5,17 +5,6 @@ locals {
     }, var.extra_tags)
 }
 
-resource "random_integer" "random_count" {
-  max = length(data.aws_subnet.east_subnet.id)-1
-  min = 0
-  
-  keepers = {
-     test_name  = var.ec2_name
-  }
-}
-
-
-
 resource "aws_instance" "sampleinstance" {
   count         = var.ec2_count
   ami           = var.aws_image
