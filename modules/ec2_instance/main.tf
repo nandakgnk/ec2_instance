@@ -24,7 +24,7 @@ resource "aws_instance" "sampleinstance" {
   ebs_optimized               = false
   user_data = var.user_data
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
   tags = local.tags
  

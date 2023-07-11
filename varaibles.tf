@@ -45,12 +45,6 @@ variable "west_ec2name" {
 }
 
 
-variable "east_subnetid" {
-}
-
-variable "west_subnetid" {
-}
-
 variable "east_securitygid" {
   type = list(any)
 }
