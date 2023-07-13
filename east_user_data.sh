@@ -1,4 +1,4 @@
 #!/bi/bash
 echo "hi"
-yum install firewalld -y
-service firewalld start
+sudo yum install firewalld -y
+sudo service firewalld start
